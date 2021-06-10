@@ -1,7 +1,7 @@
 import { Connection } from 'typeorm';
 import { Factory, Seeder } from 'typeorm-seeding';
 
-import Administrator from '../../../../modules/administrator/infra/typeorm/entities/Administrator';
+import Administrator from '../../../../modules/administrator/infra/typeorm/entity/Administrator';
 
 export default class AdministratorSeed implements Seeder {
   public async run(factory: Factory, connection: Connection): Promise<void> {
