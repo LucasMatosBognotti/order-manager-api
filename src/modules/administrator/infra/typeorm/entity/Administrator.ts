@@ -6,6 +6,8 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
+import { Exclude } from 'class-transformer';
+
 @Entity('administrators')
 class Administrator {
   @PrimaryGeneratedColumn('uuid')
@@ -17,6 +19,7 @@ class Administrator {
   @Column()
   email: string;
 
+  @Exclude()
   @Column()
   password: string;
 

@@ -1,15 +1,13 @@
 import { Router } from 'express';
 
-import ensureAuthenticate from '../middleware/ensureAuthenticate';
-
-import FindOneAdministratorController from '../controllers/AdministratorController';
+import AdministratorController from '../controllers/AdministratorController';
 
 const administratorRouter = Router();
 
-const findOneAdministrator = new FindOneAdministratorController();
+const administratorController = new AdministratorController();
 
-administratorRouter.use(ensureAuthenticate);
+administratorRouter.post('/admin', administratorController.create);
 
-administratorRouter.get('/admin', findOneAdministrator.findOne);
+administratorRouter.get('/admin', administratorController.findOne);
 
 export default administratorRouter;

@@ -4,6 +4,8 @@ import 'express-async-errors';
 
 import express, { NextFunction, Request, Response } from 'express';
 
+import './shared/infra/typeorm';
+
 import routes from './routes';
 import AppError from './shared/error/AppError';
 
