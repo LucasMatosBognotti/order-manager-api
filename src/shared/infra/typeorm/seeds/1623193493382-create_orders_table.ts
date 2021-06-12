@@ -1,7 +1,7 @@
 import { Connection } from 'typeorm';
 import { Factory, Seeder } from 'typeorm-seeding';
 
-import Order from '../../../../modules/order/infra/typeorm/entities/Order';
+import Order from '../../../../modules/order/infra/typeorm/entity/Order';
 
 export default class OrderSeed implements Seeder {
   public async run(factory: Factory, connection: Connection): Promise<void> {

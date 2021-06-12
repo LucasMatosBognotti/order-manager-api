@@ -1,7 +1,7 @@
 import { Connection } from 'typeorm';
 import { Factory, Seeder } from 'typeorm-seeding';
 
-import Service from '../../../../modules/service/infra/typeorm/entities/Service';
+import Service from '../../../../modules/service/infra/typeorm/entity/Service';
 
 export default class ServiceSeed implements Seeder {
   public async run(factory: Factory, connection: Connection): Promise<void> {

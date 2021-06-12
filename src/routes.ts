@@ -7,6 +7,8 @@ import administratorRouter from './modules/administrator/infra/http/routes/admin
 import professionalRouter from './modules/professional/infra/http/routes/professional.routes';
 import serviceRouter from './modules/service/infra/http/routes/service.routes';
 import orderRouter from './modules/order/infra/http/routes/order.routes';
+import itemRouter from './modules/item/infra/http/routes/item.routes';
+import cardRouter from './modules/card/infra/http/routes/card.routes';
 
 const routes = Router();
 
@@ -20,5 +22,7 @@ routes.use('/', administratorRouter);
 routes.use('/', professionalRouter);
 routes.use('/', serviceRouter);
 routes.use('/', orderRouter);
+routes.use('/', itemRouter);
+routes.use('/', cardRouter);
 
 export default routes;

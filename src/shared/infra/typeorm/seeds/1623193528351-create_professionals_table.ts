@@ -1,7 +1,7 @@
 import { Connection } from 'typeorm';
 import { Factory, Seeder } from 'typeorm-seeding';
 
-import Professional from '../../../../modules/professional/infra/typeorm/entities/Professional';
+import Professional from '../../../../modules/professional/infra/typeorm/entity/Professional';
 
 export default class ProfessionalSeed implements Seeder {
   public async run(factory: Factory, connection: Connection): Promise<void> {
