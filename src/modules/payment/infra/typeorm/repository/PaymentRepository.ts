@@ -22,7 +22,14 @@ class PaymentRepository implements IPaymentRepository {
 
   public async findAll(): Promise<Payment[] | undefined> {
     const payments = await this.ormRepository.find({
-      relations: ['order', 'card', 'payment_method'],
+      join: {
+        alias: 'payments',
+        innerJoinAndSelect: {
+          order: 'payments.order',
+          card: 'payments.card',
+          payment_method: 'payments.payment_method',
+        },
+      },
     });
 
     return payments;

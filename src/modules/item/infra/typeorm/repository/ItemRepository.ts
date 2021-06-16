@@ -21,13 +21,32 @@ class ItemRepository implements IItemRepository {
   }
 
   public async findAll(): Promise<Item[] | undefined> {
-    const items = await this.ormRepository.find();
+    const items = await this.ormRepository.find({
+      join: {
+        alias: 'itens',
+        innerJoinAndSelect: {
+          order: 'itens.order',
+          service: 'itens.service',
+          professional: 'itens.professional',
+        },
+      },
+    });
 
     return items;
   }
 
   public async findById(id: string): Promise<Item | undefined> {
-    const item = await this.ormRepository.findOne({ where: { id } });
+    const item = await this.ormRepository.findOne({
+      where: { id },
+      join: {
+        alias: 'itens',
+        innerJoinAndSelect: {
+          order: 'itens.order',
+          service: 'itens.service',
+          professional: 'itens.professional',
+        },
+      },
+    });
 
     return item;
   }

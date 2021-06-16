@@ -26,7 +26,7 @@ class AdministratorController {
       password,
     });
 
-    return res.json(administrator);
+    return res.json(classToClass(administrator));
   }
 
   public async findOne(req: Request, res: Response): Promise<Response> {

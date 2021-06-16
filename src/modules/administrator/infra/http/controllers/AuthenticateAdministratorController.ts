@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { classToClass } from 'class-transformer';
 
 import AdministratroRepository from '../../typeorm/repository/AdministratorRepository';
 import BCryptHashProvider from '../../../provider/implementations/BCryptHashProvider';
@@ -23,7 +24,7 @@ class AuthenticateAdministratorController {
       password,
     });
 
-    return res.json(administrator);
+    return res.json(classToClass(administrator));
   }
 }
 
