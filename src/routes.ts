@@ -14,12 +14,12 @@ import paymentRouter from './modules/payment/infra/http/routes/payment.routes';
 const routes = Router();
 
 routes.use('/', sessionRouter);
+routes.use('/', administratorRouter);
 
 /* Middleware */
 
 routes.use(ensureAuthenticate);
 
-routes.use('/', administratorRouter);
 routes.use('/', professionalRouter);
 routes.use('/', serviceRouter);
 routes.use('/', orderRouter);
